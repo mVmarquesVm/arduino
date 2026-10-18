@@ -42,9 +42,7 @@ static Botao botaoModo;
 static unsigned long ultimaLeitura = 0;
 static unsigned long ultimoEnvio = 0;
 
-// ------------------------------------------------------------------
 // Ações (usadas pelos botões e pelos comandos da nuvem)
-// ------------------------------------------------------------------
 static void definirModo(ModoOperacao novo) {
   if (estado.modo == novo) return;
   estado.modo = novo;

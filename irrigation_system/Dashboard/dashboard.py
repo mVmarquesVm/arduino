@@ -38,9 +38,7 @@ COMANDOS = {"regar", "definirModo"}
 PASTA = os.path.dirname(os.path.abspath(__file__))
 
 
-# ======================================================================
 # Acesso ao FIWARE
-# ======================================================================
 class Fiware:
     def __init__(self, host):
         self.orion = f"http://{host}:1026"
@@ -78,9 +76,7 @@ class Fiware:
         self._chamar("PATCH", f"{self.orion}/v2/entities/{ENTIDADE_ID}/attrs", corpo)
 
 
-# ======================================================================
 # Modo demonstração (sem FIWARE): finge um dispositivo funcionando
-# ======================================================================
 class Demo:
     def __init__(self):
         self.inicio = time.time()
@@ -143,9 +139,7 @@ class Demo:
         self.cmd[f"{nome}_info"] = "OK"
 
 
-# ======================================================================
 # Servidor HTTP
-# ======================================================================
 def criar_handler(fonte):
     class Handler(BaseHTTPRequestHandler):
         def log_message(self, fmt, *args):   # silencia o log de cada requisição
